@@ -8,7 +8,7 @@ on:
 
 jobs:
     calling-acciojob-main-action:
-    uses: acciojob/acciojob-tests-action/.github/workflows/main-action.yaml@main
+    uses: acciojob/acciojob-tests-action/.github/workflows/main-action.yml@main
     secrets: inherit
 build:
     runs-on: ubuntu-latest
