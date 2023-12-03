@@ -39,11 +39,11 @@ public class SpotifyService {
     public Playlist findPlaylist(String mobile, String playlistTitle) throws Exception {
         return spotifyRepository.findPlaylist(mobile, playlistTitle);
     }
-//
-//    public Song likeSong(String mobile, String songTitle) throws Exception {
-//
-//    }
-//
+
+    public Song likeSong(String mobile, String songTitle) throws Exception {
+        return spotifyRepository.likeSong(mobile, songTitle);
+    }
+
     public String mostPopularArtist() {
         return spotifyRepository.mostPopularArtist();
     }
