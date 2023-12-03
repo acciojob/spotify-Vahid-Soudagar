@@ -35,7 +35,11 @@ public class SpotifyRepository {
         playlists = new ArrayList<>();
         albums = new ArrayList<>();
         artists = new ArrayList<>();
+
+
     }
+
+
 
     public User createUser(String name, String mobile) {
         if (name == null || mobile == null) {
@@ -216,19 +220,39 @@ public class SpotifyRepository {
 
 
     public Song likeSong(String mobile, String songTitle) throws Exception {
+        // Find the user
         User user = findUserByMobile(mobile);
-
-        if (user == null){
+        if (user == null) {
             throw new Exception("User not found");
         }
 
+        // Find the song
         Song song = findSongByTitle(songTitle);
-        List<Album> album = getAlbumsContainingSong(song);
-        for (Album album1 : album) {
-            Artist artist = getArtistFromAlbum(album1);
+        if (song == null) {
+            throw new Exception("Song not found");
         }
-        return null;
+
+        // Check if the user has already liked the song
+        if (songLikeMap.containsKey(song) && songLikeMap.get(song).contains(user)) {
+            System.out.println("User already liked the song");
+            return song;
+        }
+
+        // Like the song
+        List<User> likedUsers = songLikeMap.getOrDefault(song, new ArrayList<>());
+        likedUsers.add(user);
+        songLikeMap.put(song, likedUsers);
+
+        // Auto-like the corresponding artist(s)
+        List<Album> albumsWithSong = getAlbumsContainingSong(song);
+        for (Album album : albumsWithSong) {
+            Artist artist = getArtistFromAlbum(album);
+            artist.setLikes(artist.getLikes()+1);
+        }
+
+        return song;
     }
+
 
 
     public String mostPopularArtist() {

@@ -29,11 +29,4 @@ public class User {
         this.mobile = mobile;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", mobile='" + mobile + '\'' +
-                '}';
-    }
 }

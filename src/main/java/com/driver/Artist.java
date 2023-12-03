@@ -31,11 +31,5 @@ public class Artist {
         this.likes = likes;
     }
 
-    @Override
-    public String toString() {
-        return "Artist{" +
-                "name='" + name + '\'' +
-                ", likes=" + likes +
-                '}';
-    }
+
 }
