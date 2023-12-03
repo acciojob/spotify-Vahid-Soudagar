@@ -5,6 +5,7 @@ public class Song {
     private int length;
     private int likes;
 
+
     public Song(){
 
     }
@@ -36,5 +37,14 @@ public class Song {
 
     public void setLikes(int likes) {
         this.likes = likes;
+    }
+
+    @Override
+    public String toString() {
+        return "Song{" +
+                "title='" + title + '\'' +
+                ", length=" + length +
+                ", likes=" + likes +
+                '}';
     }
 }

@@ -28,4 +28,12 @@ public class User {
     public void setMobile(String mobile) {
         this.mobile = mobile;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", mobile='" + mobile + '\'' +
+                '}';
+    }
 }

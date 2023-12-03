@@ -31,4 +31,12 @@ public class Album {
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
     }
+
+    @Override
+    public String toString() {
+        return "Album{" +
+                "title='" + title + '\'' +
+                ", releaseDate=" + releaseDate +
+                '}';
+    }
 }

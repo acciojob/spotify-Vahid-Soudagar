@@ -30,4 +30,12 @@ public class Artist {
     public void setLikes(int likes) {
         this.likes = likes;
     }
+
+    @Override
+    public String toString() {
+        return "Artist{" +
+                "name='" + name + '\'' +
+                ", likes=" + likes +
+                '}';
+    }
 }
