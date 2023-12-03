@@ -5,7 +5,6 @@ public class Song {
     private int length;
     private int likes;
 
-
     public Song(){
 
     }
@@ -38,5 +37,4 @@ public class Song {
     public void setLikes(int likes) {
         this.likes = likes;
     }
-
 }
