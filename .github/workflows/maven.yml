@@ -2,13 +2,15 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "master"]
   pull_request:
     branches: [ "main" ]
 
 jobs:
-  build:
-
+    calling-acciojob-main-action:
+    uses: acciojob/acciojob-tests-action/.github/workflow/main-action.yaml@main
+    secrets: inherit
+build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
